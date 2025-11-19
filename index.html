@@ -1,143 +1,75 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المنصة التعليمية</title>
-  <style><style>
-  body {
-     ...
-  }
-
-  nav a {
-     ...
-  }
-
-  .hero {
-     ...
-  }
-
-  /* --- ضيفي الكود هنا --- */
-
-.courses-section {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.courses-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.course-card {
-    background: white;
-    width: 200px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.course-card a {
-    margin-top: 10px;
-    display: inline-block;
-    padding: 8px 15px;
-    background: #333;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-.course-card a:hover {
-    background: #555;
-}
-
-  </style>
-    body {
-      font-family: Arial;
-      background:#f5f5f5;
-<div class="hero">
-   <h1>منصتك التعليمية</h1>
-   <p>كل الكورسات في مكان واحد — Math, English, Physics, Critical Thinking</p>
-</div>
-
-<!-- بداية الكورسات -->
-<div class="courses-section"r 
-    </a>
-</div>: <div>
-    <h3>Critical Thinking</h3>
-    <p>أسئلة + شرح تفكير منطقي</p>
-<a href="/Study-platform-/login.html">
-    <button>ابدا الآن</button>
-</a>
-    </a>
-</div>
-
- <div>
-    <h3>Math</h3>
-    <p>شرح شامل وتمارين<
-    </a> href="login.html">
-        <button>ابدا الآن</button>
-</div>
- <div>
-    <h3>English</h3>
-    <p>جرامر + Vocabulary</p>
-  href="login.html">
-        <button>ابدا الآن</button>
-    </a>
- </div> <div>
-    <h3>Physics</h3>
-    <p>شرح + مسائل</p>
-    /p>
-    <a href="login.html">
-        <button>ابدا الآن</button>
-    </a>
-</div>
-    </div>
-</div>
-<!-- نهاية الكورسات -->      margin:0;
-      padding:0;
-      text-align:center;
-    }
-    nav {
-      background:#222;
-      color:white;
-      padding:15px;
-      display:flex;
-      justify-content:space-around;
-    }
-    nav a {
-      color:white;
-      text-decoration:none;
-      font-size:18px;
-      margin:0 10px;
-    }
-    .hero {
-      padding:60px;
-      background:white;
-      margin-top:20px;
-      border-radius:12px;
-      width:80%;
-      margin:auto;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة الأدمن | Study Platform</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
+<header>
+<h1>لوحة الأدمن</h1>
 <nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="courses.html">الكورسات</a>
-  <a href="admin-login.html">الأدمن</a>
+<a href="index.html">الرئيسية</a>
+<a href="courses.html">الكورسات</a>
+<a href="admin.html">لوحة الأدمن</a>
 </nav>
-
-<div class="hero">
-  <h1>منصتك التعليمية</h1>
-  <p>كل الكورسات في مكان واحد — Math, English, Physics, Critical Thinking</p>
-</div>
-
+</header>
+<main>
+<h2>إدارة الكورسات</h2>
+<section id="add-course">
+<h3>إضافة كورس جديد</h3>
+<input type="text" id="new-title" placeholder="عنوان الكورس">
+<input type="text" id="new-desc" placeholder="وصف الكورس">
+<button onclick="addCourse()">إضافة الكورس</button>
+</section>
+<section id="course-list">
+<h3>الكورسات الحالية</h3>
+</section>
+</main>
+<script src="admin.js"></script>
+</body>
+  </html>body {font-family: Arial, sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333;}
+header{background:#4CAF50;color:white;padding:10px 20px;text-align:center;}
+header nav a{color:white;margin:0 10px;text-decoration:none;}
+main{padding:20px;text-align:center;}
+.btn{display:inline-block;padding:10px 20px;background:#4CAF50;color:white;text-decoration:none;border-radius:5px;margin-top:10px;}
+.course,.course-admin{border:1px solid #ddd;padding:10px;margin:10px auto;max-width:400px;text-align:right;background:#fff;}
+.course-admin button{margin:0 5px;padding:5px 10px;}
+footer{text-align:center;padding:10px;background:#ddd;margin-top:20px;}
+input{padding:5px;margin:5px;}let courses = JSON.parse(localStorage.getItem('courses')) || [
+{ title: "English", description: "Learn English with interactive lessons." },
+{ title: "Math 1", description: "Basic mathematics concepts and exercises." },
+{ title: "Physics", description: "Learn physics principles and experiments." },
+{ title: "Critical Thinking", description: "Improve your logical and critical thinking skills." }
+];
+localStorage.setItem('courses', JSON.stringify(courses));
+const coursesList = document.getElementById('courses-list');
+courses.forEach(course => {
+const div = document.createElement('div');
+div.className='course';
+div.innerHTML=`<h3>${course.title}</h3><p>${course.description}</p>`;
+coursesList.appendChild(div);
+});<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الكورسات | Study Platform</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>الكورسات</h1>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="courses.html">الكورسات</a>
+<a href="admin.html">لوحة الأدمن</a>
+</nav>
+</header>
+<main id="courses-list">
+<h2>جميع الكورسات</h2>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
