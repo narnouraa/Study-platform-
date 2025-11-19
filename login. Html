@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>تسجيل الدخول</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+        .login-box { width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input[type=text], input[type=password] { width: 90%; padding: 10px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #333; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>تسجيل الدخول للمنصة</h2>
+        <form action="index.html" method="get">
+            <label for="uname">اسم المستخدم:</label>
+            <input type="text" id="uname" name="username" required>
+
+            <label for="psw">كلمة المرور:</label>
+            <input type="password" id="psw" name="password" required>
+
+            <button type="submit">دخول</button>
+        </form>
+        <p>
+            <a href="#">إنشاء حساب جديد</a>
+        </p>
+    </div>
+</body>
+</html>
